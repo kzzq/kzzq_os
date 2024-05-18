@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kzzQ | β</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <!--
+    <div class="bodybefore">
+        <img src="/img/epilepsy.gif">
+    </div> -->
+    <p class="bg-text">β</p>
+    <div class="window settings show" id="draggablewindow_settings" style="width: 550px; height: 660px;">
+        <div class="titlebar" id="titlebar">
+            <span>Settings</span>
+            <div class="windowcontrols">
+                <button aria-label="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQElEQVR4nGNgGF7g////DiBMrjwDVEEDNkX45AgqJFozNg0ka4YBJI2ka6bYgP+UeOE/JYH4n9Jo/E9pQhqaAAB35Kxl09st7gAAAABJRU5ErkJggg=="></button>
+            </div>
+        </div>
+        <div class="about">
+        <h2><b>Settings</b></h2>
+        <input onclick="toggle_smalltitlebar()" type="checkbox"><label>Make titlebar small</label><br>
+        <button onclick="togglekzqver_ok()">OK</button>
+        <span class="buildinfo">v0.281_4327b</span>
+        </div>
+    </div>
+    <div class="window kzqver hidden" id="draggablewindow_kzqver">
+        <div class="titlebar" id="titlebar">
+            <span>Hunted down...</span>
+            <div class="windowcontrols">
+                <button aria-label="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQElEQVR4nGNgGF7g////DiBMrjwDVEEDNkX45AgqJFozNg0ka4YBJI2ka6bYgP+UeOE/JYH4n9Jo/E9pQhqaAAB35Kxl09st7gAAAABJRU5ErkJggg=="></button>
+            </div>
+        </div>
+        <div class="about">
+        <img src="/img/kzqver/logo.gif" width="150px" align="left">
+        <h2><b>kzzQ</b></h2>
+        <p><small>v0.281_4327b</small><br>
+        This webOS is inspired by other inquirities.</p>
+        <button onclick="togglekzqver_ok()">OK</button>
+        </div>
+    </div>
+    
+    <div class="window hidden" id="draggablewindow" style="width: 550px; height: 660px;">
+        <div class="titlebar" id="titlebar">
+            <span>fun test!</span>
+            <div class="windowcontrols">
+                <button aria-label="minimize"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGNgGAXDBfz//7+BHEw9A0bBUAcAieBhrfK3LfUAAAAASUVORK5CYII="></button>
+                <button aria-label="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQElEQVR4nGNgGF7g////DiBMrjwDVEEDNkX45AgqJFozNg0ka4YBJI2ka6bYgP+UeOE/JYH4n9Jo/E9pQhqaAAB35Kxl09st7gAAAABJRU5ErkJggg=="></button>
+            </div>
+        </div>
+        <div class="about">
+        <img src="/img/kzqver/logo.gif" width="150px" align="right">
+        <h2><b>kzzQ</b></h2>
+        </div>
+    </div>
+    <div id="startyMenu" class="startMenu">
+    <div class="userProfile">
+        <div class="userPicture"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmUlEQVR4nO3YvyvEcRzH8e9xUgYMFvE/cINNiokM3GS0I3UGdhZlusEupZTFoBiYlOFyJicDqSNikx8pnac+56uu2+7z6/25+j6W267X8+7Tdd9PFCUSCSPAAJADdoFz4AX44I96fQYugD1gBRgCUpEkoANYAK7QcxfHdEqMnwYesOMJmPE1vBXI40YeaHE9fsfR+H95lwHr+DHrYvwo8OMp4B3oszk+BVzi16bNgHH8+7L2LQBHyFiyMb7H49mvd2ojYAo5FaDLNGADWSOmAYfCAYumAQXhgH3TgFvhgAowbBKg/ilKKwHtugHXhGFVN+CMMHwDGZ2ALcJRUH/pGw2YIyw5nYf1kNw0eIiqEepXIBRFnYBlwlBUJ0InoDu+55HwGT/sDzY8vC5iXiggazS8JiAt8FiptFkJiCPG8CyyDThu9oBsswekgcemDVCAbU/7XyMX1NWfp4ATVwEZTwGTrgJ6PYxfczK+5prdhTd1bJx98nURthxYvYkWCOj3Pj4OuLcwviwyXgEmDCPK6tq++maJRCIy9Qtj8Mhypr8rDAAAAABJRU5ErkJggg=="></div>
+        <p class="userTitle">User</p>
+    </div>
+    <ul class="taskies">
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9UlEQVR4nLXSzytFQRjG8bNg6cfKVtmjrOyuBRs2N/+BS/4DbO/WWcnyUvIHsLNX7KSsLRSFLCWh1EejUZPOHOcuPDU17zTPd3rfZ4riP4QJbOEAh+hipql5E5+qdYShOnPb3zqpA5xqplYO8BwvvGAN+7jBG17xiCeM5gBBJcYxHPflT98YCY/kzNN4T+oyDu0Y28n5B6aqAHshgaSexRh6vwAh3l4VoINbLCZny7hKWljCHVZybXRwltQtzCX1edYchEE8YDL5F+1kRvcYKOqEdVzEiX8DQmy4xGqtOYHs4hobcYX9TiNzAlmIyYQU5vsy96Mv3kWVlqu1cFsAAAAASUVORK5CYII=">
+            About Me
+        <ul>interesting question...</ul></li>
+        <hr>
+        <li id="link-kzqver" onclick="togglekzqver()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9UlEQVR4nLXSzytFQRjG8bNg6cfKVtmjrOyuBRs2N/+BS/4DbO/WWcnyUvIHsLNX7KSsLRSFLCWh1EejUZPOHOcuPDU17zTPd3rfZ4riP4QJbOEAh+hipql5E5+qdYShOnPb3zqpA5xqplYO8BwvvGAN+7jBG17xiCeM5gBBJcYxHPflT98YCY/kzNN4T+oyDu0Y28n5B6aqAHshgaSexRh6vwAh3l4VoINbLCZny7hKWljCHVZybXRwltQtzCX1edYchEE8YDL5F+1kRvcYKOqEdVzEiX8DQmy4xGqtOYHs4hobcYX9TiNzAlmIyYQU5vsy96Mv3kWVlqu1cFsAAAAASUVORK5CYII=">
+            About webOS
+        <ul>VERY INTERESTING QUESTION..!!!</ul></li>
+        <hr>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA20lEQVR4nM2SvQ4BURSEhUJJz3tIdOsBqLwGiWg9gyi8AC9AIaETvZKsWrKdn+is4pMbZ2NsroRGTHKTk5kzc27uPZnMXwHIAgFQAfLC541zWvadOQdMeWIPdOy4OsHE9foC2nyOlm96ZOIF2HlMI+Gjl1sANTF3gSoQinlt5khCAg0YGLkzc9kmJuiJPra6rwEraQ5TZg1xN0mw1IAj3+OgATdPwxBo2nF1GrEGxClxpgtjC+Y4xVUDtiK4Nyh49qSY+t6NinXgBMyBkndVH33udxbAGWi86/st7mNoImKeSUEaAAAAAElFTkSuQmCC">
+            Games
+        <ul>for browsers emulation</ul></li>
+        <hr>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2klEQVR4nK3SsUpDQRBG4RgLH0BSmT6FiNr4BGlFCKSJFhLQMql8AEtNJYGANj5QulQipBBL0U7LfLKwxXq53ruBnGZnFv7D7jCNxqbBFo7Qxwm21wmf4s1fQt/PCQ/9zwrXVeE9fKvmB+3SL2EkjxuMcVgUPGUKnnGJJXZSwUOmYIarWF8Up59DL0oCs1RwnBFeYBcfsX9MBeOacNiFfUyTu1EqmOAlDvM+1l94xR1auC1ID3JWuo1zzEteNagTnJWs9Ts+Yz2tFCSvCAPuxjP0zbBI6NQKcvgFiCFFcM55FDMAAAAASUVORK5CYII=">
+            Forum
+            <ul>to chat with <span title="sum">Σ</span> of your new friends</ul></li>
+        <hr>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqklEQVR4nM3STQqBYRTFcYaUqR0o2QQZY6J3FUayDJmxBClbYGoTtiAbEH5SLx55v4w4dSe3e//PuU+nVPoboYMorh6q3yxPfGqPZlHAOgFwwQgNLOOZRy1QzwIc0EcXR8maZzmqYoyTdK3zTsjT7wF71IoCNigHD5bjXr8o4GX33XWUFaRUQOBgEDbbQZTDmmGLFa4BdPf8g5yUDnHGFJXchQTAPVSttIEbdfku7mLdT6IAAAAASUVORK5CYII=">
+            Update Logs
+            <ul>to see what has been changed</ul></li>
+        <hr>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA3ElEQVR4nLWTTQrCQAyFewEregGlQr2M1IX0NC70JqJnacWFe38WXkHc1YX9JJhiGKe0Cj4YmE7mvWSS1yD4F4AZsNKV/iKw4419G0IXWAJjoA9cjcBNz0bAHAh9AhtDuPOJAih1v3bJMfBwCPKd6So9sdgKDIGzc2Fi4okjcgEit4oOcNQLmeeJucZO0q+6Jp5bCBwkmRuMtKwKUm5i4lPnCZJo0NTEUrPmjU0UyGgMsagZI94xBi+BUE0iZhHTiHkqiKl6arKF10gewb0R2DYSPAKp+ZlmXwu0xRNSH+nViMgBxQAAAABJRU5ErkJggg==">
+            Settings
+            <ul>to set your needs up</ul></li>
+    </ul>
+</div>
+<div class="buildinfo">kzzQ | Test Mode<br>
+    v0.281_4327b</div>
+    <div class="taskbar">
+            <div class="startb" onclick="toggleDropdown()">
+            <div class="text">start</div>
+            <div class="bg"></div>
+            </div>
+<!--         <div class="task">
+            <span>~/kzzQ</span>
+        </div> -->
+        <div id="clock">Time O' Clock</div>
+    </div>
+</body>
+<!--    <script src="/js/clock/index.js">
+    </script>
+-->
+    <script src="/js/miscellaneous/index.js">
+    </script>
+    <script src="/js/startmenu/index.js">
+    </script>
+    <script src="/js/dragwindow/kzqver.js">
+    </script>
+    <script src="/js/dragwindow/settings.js">
+    </script>
+</html>
