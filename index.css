@@ -1,4 +1,7 @@
 .bodybefore {
+  opacity: 0;
+  pointer-events: none;
+
   width: 100vw;
   height: 100vh;
   background: black;
@@ -7,9 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
   animation: 5s bodydisappear linear;
+  font-family: "MS UI Gothic", nec_apc3, Verdana, sans-serif !important;
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-crisp-edges;
   image-rendering: pixelated;
@@ -40,6 +42,7 @@
   font-family: "Segoe Script";
 }
 body {
+  overflow: hidden;
   margin: 0;
   z-index: 10;
   height: 100vh;
@@ -48,19 +51,31 @@ body {
   justify-content: center;
   cursor: url(/cursor.png), default;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg-beta);
+  background: var(--bg-default);
+  color: white;
 }
 :root {
   --bg-default: linear-gradient(-45deg,black,rgb(32, 33, 34));
+  --bg-default-subpart1: rgb(50, 52, 54);
+  --bg-default-subpart2: rgb(32,33,34);
   --bg-alpha: linear-gradient(-45deg,rgb(65, 0, 0),rgb(112, 12, 12));
+  --bg-alpha-subpart1: rgb(112, 12, 12);
+  --bg-alpha-subpart2: rgb(65, 0, 0);
   --bg-beta: linear-gradient(-45deg,rgb(13, 130, 209),rgb(79, 190, 255));
+  --bg-beta-subpart1: rgb(79, 190, 255);
+  --bg-beta-subpart2: rgb(13, 130, 209);
   --startbutton-bg: linear-gradient(0deg,rgb(255, 0, 255),rgb(180, 0, 180));
+  --startbutton-bg-subpart1: rgb(255, 0, 255);
+  --startbutton-bg-subpart2: rgb(180, 0, 180);
 }
 .window .about button {
   border: 1px solid white;
   background: transparent;
   color: white;
   padding: 2px 25px;
+}
+.window.settings button .themes-image {
+  width: 150px;
 }
 .window .about button:hover {
   background: rgba(255,255,255,0.15);
@@ -69,12 +84,8 @@ body {
   background: rgba(0,0,0,0.15);
 }
 .window .about .buildinfo {
-  opacity: 0.35;
-  text-align: center;
   width: 100%;
   height: auto;
-  bottom: 0;
-  position: absolute;
 }
 input[type="checkbox"] {
   background: none;
@@ -125,21 +136,23 @@ button {
 
   width: 350px;
   height: 550px;
-  background: rgb(50, 52, 54);
+  background: var(--bg-default-subpart2);
   box-shadow: 0 0 5px black;
   left: 0;
   top: 0;
   position: absolute;
   animation: 0.5s windowappear cubic-bezier(.79,.14,.15,.86);
+  overflow-y: scroll;
+  pointer-events: none;
 }
 @keyframes windowappear {
   0% {
     opacity: 0;
-    transform: rotate3d(1, 0, 0, 30deg) scale(0.5);
+    transform: rotate3d(1, 0, 0, 40deg) scale(0.85);
   }
   100% {
     opacity: 1;
-    transform: rotate3d() scale(1);
+    transform: rotate3d(0deg) scale(1);
   }
 }
 @keyframes windowdisappear {
@@ -152,12 +165,16 @@ button {
     transform: rotate3d(1, 0, 0, 30deg);
   }
 }
+.window > .titlebar {
+  position: fixed;
+}
 .window .titlebar {
-  background: rgb(32, 33, 34);
+  background: var(--bg-default-subpart1);
   width: 100%;
   height: 32px;
   font-size: 11px;
   color: white;
+  position: absolute;
   left: 0;
   top: 0;
 }
@@ -176,6 +193,9 @@ button {
   bottom: 0;
   left: 0;
   margin: 20px 0;
+}
+.taskbar.transparent ~ .startMenu {
+  background: rgba(46, 48, 49, 0.5);
 }
 .startMenu .userProfile {
   left: 0; top: 0;
@@ -203,6 +223,7 @@ button {
 }
 .show {
   display: block;
+  pointer-events: all;
 }
 .hidden {
   display: none;
@@ -236,6 +257,12 @@ li ul {
   width: 100%;
   height: 20px;
   background: rgb(46, 48, 49);
+}
+.taskbar.transparent, .window.transparent {
+  background: rgba(46, 48, 49, 0.5);
+}
+.window.transparent {
+  backdrop-filter: blur(15px);
 }
 .task {
   font-family: 'Courier New', Courier, monospace;
@@ -289,7 +316,7 @@ li ul {
   transition: 0.5s;
   z-index: 9;
   transform: rotate(45deg);
-  background: var(--bg-beta);
+  background: var(--startbutton-bg);
   width: 80px;
   margin: -25px -25px;
   height: 50px;
